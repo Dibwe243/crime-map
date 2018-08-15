@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>Login_Register</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="login_register.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+    <div class="container divcontainer">
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>SIGN IN</h1>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="img/login.png" style="width: 10%">
+            </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="/action_page.php">
+                    <h5>USERNAME:</h5>
+                    <input type="text" name="username">
+                    <br>
+                    <h5>CELL NUMBER:</h5>
+                    <input type="text" name="cellnumber">
+                    <br>
+                </form> 
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col">
+                    <a href="#" class="fb btn">
+                        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                    </a>
+                    <br>
+                    <br>
+                    <a href="#" class="twitter btn">
+                        <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                    </a>
+                    <br>
+                    <br>
+                    <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                        </i> Login with Google+
+                    </a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!-- Row 5 -->
+        <div class="row">
+                <div class="col-sm-12">
+                    <h4>OR</h4>
+                    <button onclick="toggle()" style="background-color: #115E9C; border-radius: 5px;color: antiquewhite;">
+                        SIGN UP
+                    </button>
+                </div>
+                
+        </div>
+        <!-- Row 6 -->
+        <div class="row" id="toggle" style="display: none;">
+                <br>
+                <br>
+                <img src="img/register.png" style="width: 10%">
+                <div class="col-sm-12">
+                        <form>
+                            <h5>FIRST NAME:</h5>
+                            <input type="text" name="firstname">
+                            <br>
+                            <h5>LAST NAME:</h5>
+                            <input type="text" name="lastname">
+                            <br>
+                            <h5>USERNAME:</h5>
+                            <input type="text" name="username">
+                            <br>
+                            <h5>CELL NUMBER:</h5>
+                            <input type="text" name="cellnumber">
+                            <br>
+                            <br>
+                            <input type="submit">
+                        </form> 
+                </div>
+        </div>
+        <!-- Row 7 -->
+        <div class="row">
+                <div class="col-sm-12">
+                        <form>
+                                <div class="checkbox">
+                                  <label><input type="checkbox" value=""><a href="url">View </a>our Terms and Conditions</label>
+                                </div>
+                        </form>
+                </div>
+        </div>
+        <!-- Row 8 -->
+        <div class="row">
+                <div class="col-sm-12"></div>
+        </div>
+    </div>
+</body>
+</html>
