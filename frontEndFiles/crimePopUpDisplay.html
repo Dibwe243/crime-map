@@ -6,26 +6,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-<!--=====popup=====--->
+<!--=====modal=====--->
   <div class="container">
-<!--
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> -->
+<!--====css will be used to align this properly for now i used br tags====-->
+
+
     <a href="#" title="Header" data-toggle="popover" data-placement="top" data-content="Content" id="icon">
-  <img id="icon" src="" alt="icon" style="width:100%;max-width:300px"></a>
+  <img id="icon" src="resources/css/img/Hijacking.png" alt="icon" ></a>
 
   </div>
-
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -34,7 +33,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reiciendis!</h2>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reiciendis!</h4>
       </div>
       <div class="modal-body">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quis quaerat consequatur ipsam adipisci, voluptas dolore nobis minima fuga nam.
@@ -42,12 +41,17 @@
         <p id="demo"></p>
       </div>
       <div class="modal-footer">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, quaerat.</h3>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, quaerat.</h4>
       </div>
     </div>
 
   </div>
-  <script src="crimePopUpDetails.js"></script>
-</body>
 
+</body>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <script src="resources/js/crimePopUpDetails.js"></script>
 </html>
