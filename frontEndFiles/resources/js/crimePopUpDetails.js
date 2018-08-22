@@ -1,4 +1,4 @@
-//time 
+//time and date
 var d = new Date();
 document.getElementById("demo").innerHTML = d;
 
