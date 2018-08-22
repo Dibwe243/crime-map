@@ -1,7 +1,7 @@
 /*====MAIN CSS====*/
 
 html, body {
-
+  position: absolute !important;
 }
 
 h1 {
@@ -10,4 +10,7 @@ h1 {
 
 p{
 
+}
+.modal {
+  position: initial!important;
 }
