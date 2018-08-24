@@ -10,16 +10,17 @@ p {}
 
 #text {
   text-align: center;
-  font-family: monospace;
+  font-family: sans-serif;
   font-size: 0.8rem;
 }
 
 .loader {
-  font-size: 17px;
-  position: relative;
-  width: 4em;
-  height: 1em;
-  margin: 100px auto;
+    font-size: 17px;
+    position: relative;
+    width: 4em;
+    height: 1em;
+    margin: auto;
+    margin-top: 272px;
 }
 
 .dot {
@@ -73,3 +74,4 @@ p {}
   animation-direction: reverse;
   /* thx @HugoGiraudel */
 }
+/*===========END============*/
