@@ -16,7 +16,8 @@ p {}
 
 .loader {
     font-size: 17px;
-    position: relative;
+    /* commented this out due to merging conflicts(moved it into the html file appLoader.html) */
+    /* position: relative; */
     width: 4em;
     height: 1em;
     margin: auto;
