@@ -1,16 +1,38 @@
-/*====MAIN CSS====*/
-
-html, body {
-  position: absolute !important;
 }
 
-h1 {
-
+.dot3 {
+  left: 1.5em;
 }
 
-p{
-
+.dot4 {
+  left: 3em;
 }
-.modal {
-  position: initial!important;
+
+@keyframes reveal {
+  from {
+    transform: scale(0.001);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(1.5em)
+  }
+}
+
+.dot1 {
+  animation-name: reveal;
+}
+
+.dot2, .dot3 {
+  animation-name: slide;
+}
+
+.dot4 {
+  animation-name: reveal;
+  animation-direction: reverse;
+  /* thx @HugoGiraudel */
 }
