@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>reportForm</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <!-- ? <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-     
+
     <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -28,7 +28,7 @@
     <!-- <title>Reporting Page Gallery</title> -->
   </head>
   <body>
-    
+
 
     <style>
 
@@ -107,7 +107,7 @@ textarea {
 }
 
 
-.vertical 
+.vertical
     {
            color:white;
          display:table-cell;
@@ -186,35 +186,35 @@ textarea {
                 </div>
             </div><!-- .col -->
         </div><!-- .row -->
-        
+
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script>
             "use strict";
-            
+
             $(document).ready(function() {
-               
-            
+
+
                 // check if browser supports the geolocation api
                 if(navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(success);      // if geolocation supported, call function
                 } else {
                       $("#location").val('Your browser doesn\'t support the geolocation api.');
                 }
-                        
+
                 function success(position) {
                     var latitude    = position.coords.latitude;       // set latitude variable
                     var longitude   = position.coords.longitude;
                     console.log(latitude +'\n' + longitude);      // set longitude variable
-                    
+
                     var mapcanvas   = document.createElement('div');    // create div to hold map
                     mapcanvas.id = 'map';                   // give this div an id of 'map'
                     mapcanvas.style.height = '400px';             // set map height
                     mapcanvas.style.width = '100%';               // set map width
-                    
+
                     document.querySelector('#map-container').appendChild(mapcanvas);  // place new div within the 'map-container' div
-                    
+
                     var coords = new google.maps.LatLng(latitude,longitude);  // set lat/long object for new map
-          
+
                     var options = {                       // set options for map
                         zoom: 20,
                         center: coords,
@@ -224,18 +224,18 @@ textarea {
                         },
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
-                    
+
                     var map = new google.maps.Map(document.getElementById("map"), options); // create new map using settings above
                     var marker = new google.maps.Marker({           // place a marker at our lat/long
                         position: coords,
                         map:    map
                     });
-                    
+
                     var response = 'Latitude: ' + latitude + ' / Longitude: ' + longitude;  // build string containing lat/long
                     $("#latitude").val(latitude);
                     $("#longitude").val(longitude);                     // write string to input field
                 }
-            
+
             });
         </script>
 
@@ -257,14 +257,14 @@ textarea {
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-body">
-                  
+
 
      <div id='sample'>
 <span class='vertical'>Report Crime</span>
 </div>
- 
+
 <textarea rows="4" cols="50">
-. 
+.
 </textarea>
 
 
@@ -297,7 +297,7 @@ textarea {
 <img src="frontEndFiles/resources/img/Protests.png" style="width:10%">
 </div>
  <br>
- 
+
  <div>
 <img src="frontEndFiles/frontEndFilesresources/img/Burglary.png" style="width:10%">
 <img src="frontEndFiles/resources/img/Mugging.png" style="width:10%">
@@ -309,7 +309,7 @@ textarea {
 </div>
 
 
-  
+
 
 
 <div class="container">
@@ -322,12 +322,12 @@ textarea {
 
 
 
- 
- 
+
+
 
 <section class="container-comment text-center">
         <!-- <span data-target="#exampleModalCenter" data-toggle="modal" class="glyphicon glyphicon-camera"></span> -->
-       
+
 <div class="container">
 <div class="modal-content">
                 <div class="modal-header">
@@ -342,16 +342,16 @@ textarea {
                     </form>
                 </div>
             </section>
-         
+
 
 
 <section class="submit text-center">
   <!-- <button type="button" class="btn btn-success form-control">Submit<button> -->
-    <button type="button" class="btn btn-outline-success and-all-other-classes"> 
+    <button type="button" class="btn btn-outline-success and-all-other-classes">
   <a href="ReportForm.html" style="color:inherit">Submit</a>
 </button>
 </section>
-  
+
 
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
