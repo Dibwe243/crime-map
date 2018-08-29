@@ -23,9 +23,9 @@
 
 
     <!--We link our reportingStyle.css stylesheet-->
-    <link rel="stylesheet" type="text/css" href="css/reportingStyle.css">
-
-    <title>Reporting Page Gallery</title>
+<link rel="stylesheet" type="text/css" href="css/reportingStyle.css">
+<link rel="stylesheet" type="text/css" href="resources/css.mapStyle.css">
+    <!-- <title>Reporting Page Gallery</title> -->
   </head>
   <body>
     
@@ -68,6 +68,13 @@ p {
     margin-bottom: 1rem;
 }
 
+textarea {
+    margin: 10px;
+    font: inherit;
+    color: inherit;
+    max-width: 96%;
+}
+
 /*Commet Section */
 .glyphicon {
     position: relative;
@@ -80,6 +87,8 @@ p {
     -webkit-font-smoothing: antialiased;
     font-size: 30px;
 }
+
+
 
 .btn-success {
     color: #fff;
@@ -105,17 +114,33 @@ p {
         vertical-align:middle;
 }
 
-.container 
-{
-    padding-right: 15px;
-    padding-left: 15px;
+.container {
+    padding-right: 10px;
+    padding-left: 10px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
+    max-width: 100% !important;
 }
 
-
-
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
 
 
 .fa {
@@ -130,26 +155,101 @@ p {
     opacity: 0.7;
 }
 
-.fa-facebook {
+/*.fa-facebook {
   background: #3B5998;
   color: white;
 }
-
-.fa-twitter {
+*/
+/*.fa-twitter {
   background: #55ACEE;
   color: white;
-}</style>
+}*/
+
+@media (min-width: 768px)
+.container {
+ width: 460px;
+}
+
+</style>
+
+
+ <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Location Response</div>
+                    <div class="panel-body">
+                        <p>Latitude: <input id="latitude" type="text" class="form-control" value="Retrieving latitude&hellip;"/></p>
+                        <p>Longitude: <input id="longitude" type="text" class="form-control" value="Retrieving longitude&hellip;"/></p>
+                        <div id="map-container"></div>
+                        <button onclick="saveInfo()">SAVE</button>
+                    </div>
+                </div>
+            </div><!-- .col -->
+        </div><!-- .row -->
+        
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script>
+            "use strict";
+            
+            $(document).ready(function() {
+               
+            
+                // check if browser supports the geolocation api
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(success);      // if geolocation supported, call function
+                } else {
+                      $("#location").val('Your browser doesn\'t support the geolocation api.');
+                }
+                        
+                function success(position) {
+                    var latitude    = position.coords.latitude;       // set latitude variable
+                    var longitude   = position.coords.longitude;
+                    console.log(latitude +'\n' + longitude);      // set longitude variable
+                    
+                    var mapcanvas   = document.createElement('div');    // create div to hold map
+                    mapcanvas.id = 'map';                   // give this div an id of 'map'
+                    mapcanvas.style.height = '400px';             // set map height
+                    mapcanvas.style.width = '100%';               // set map width
+                    
+                    document.querySelector('#map-container').appendChild(mapcanvas);  // place new div within the 'map-container' div
+                    
+                    var coords = new google.maps.LatLng(latitude,longitude);  // set lat/long object for new map
+          
+                    var options = {                       // set options for map
+                        zoom: 20,
+                        center: coords,
+                        mapTypeControl: false,
+                        navigationControlOptions: {
+                            style: google.maps.NavigationControlStyle.SMALL
+                        },
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    
+                    var map = new google.maps.Map(document.getElementById("map"), options); // create new map using settings above
+                    var marker = new google.maps.Marker({           // place a marker at our lat/long
+                        position: coords,
+                        map:    map
+                    });
+                    
+                    var response = 'Latitude: ' + latitude + ' / Longitude: ' + longitude;  // build string containing lat/long
+                    $("#latitude").val(latitude);
+                    $("#longitude").val(longitude);                     // write string to input field
+                }
+            
+            });
+        </script>
 
 <!--Jumbotron Main Heading 28 Maderson Street, Jeppestown-->
- <div id='sample'>
+<!--  <div id='sample'>
 <span class='vertical'>28 Maderson street, maboneng</span>
-</div>
+</div> -->
 <!--End Jumbotron Main Heading 28 Maderson Street, Jeppestown-->
+
 
 
 <!-- Button trigger modal -->
 <section class="container-comment text-center">
-  <button type="button" class="btn .btn-info" style="background-color: #269abc; margin-top: 36px;">
+  <button type="button" class="btn .btn-info" style="background-color: #269abc;  margin-top: -920px;;">
         <span data-target="#exampleModalCenter" data-toggle="modal" class="glyphicon glyphicon-bullhorn"></span>
   </button>
           <!-- Modal -->
@@ -163,43 +263,46 @@ p {
 <span class='vertical'>Report Crime</span>
 </div>
  
-<div class="parent">
-  <p class="map-area text-center">Map Area</p>
-</div>
+<textarea rows="4" cols="50">
+. 
+</textarea>
 
 
 <div class ="container-fluid">
   <div class ="row" style="margin-right: -70px; margin-left: -15px;">
     <div class ="col-md-6 col-sm-6">
+          <div class="row" style="text-align: center; margin-left: 30%;">
         Time
     </div>
+</div>
     <div class ="col-md-6 col-sm-6">
+        <div class="row" style="text-align: center; margin-left: 20%;">
         14:09 | TUE | JUN 5
      </div>
+ </div>
   </div>
 </div><br>
 
 
 <div class ="container-fluid">
-  <div class ="row" style="margin-right: -70px; margin-left: -15px;">
+  <div class ="row" style="margin-left: -70px; margin-right: -15px;">
     <div class ="col-md-6 col-sm-6">
-        Crime
+        Crime icons
     </div>
     <div class ="col-md-6 col-sm-6">
-        icons
-
-    <div>
-<img src="images/murder.png" style="width:10%">
-<img src="images/hijacking.png" style="width:10%">
-<img src="images/assault.png" style="width:10%">
-<img src="images/protests.png" style="width:10%">
+<div>
+<img src="frontEndFiles/resources/img/Murder.png" style="width:10%">
+<img src="frontEndFiles/resources/img/Hijacking.png" style="width:10%">
+<img src="frontEndFiles/resources/img/Assault.png" style="width:10%">
+<img src="frontEndFiles/resources/img/Protests.png" style="width:10%">
 </div>
  <br>
+ 
  <div>
-<img src="images/burglary.png" style="width:10%">
-<img src="images/protests.png" style="width:10%">
-<img src="images/rape.png" style="width:10%">
-<img src="images/smash&grab.png" style="width:10%">
+<img src="frontEndFiles/frontEndFilesresources/img/Burglary.png" style="width:10%">
+<img src="frontEndFiles/resources/img/Mugging.png" style="width:10%">
+<img src="frontEndFiles/resources/img/Rape.png" style="width:10%">
+<img src="frontEndFiles/resources/img/SmashGrab.png" style="width:10%">
 </div>
    </div>
   </div>
@@ -249,7 +352,8 @@ p {
 </button>
 </section>
   
-  <!-- Optional JavaScript -->
+
+ <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
