@@ -5,6 +5,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!--===TITLE====-->
   <title>reportForm</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -22,12 +25,10 @@
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
   <!--We link our reportingStyle.css stylesheet-->
   <link rel="stylesheet" type="text/css" href="css/reportingStyle.css">
   <link rel="stylesheet" type="text/css" href="resources/css.mapStyle.css">
   <!-- <title>Reporting Page Gallery</title> -->
-
 
   <style>
     .navbar-light .navbar-toggler {
@@ -164,9 +165,13 @@
   background: #55ACEE;
   color: white;
 }*/
-.pac-container.pac-logo {
-z-index: 1051 !important;
-}
+
+
+
+    .pac-container.pac-logo {
+      z-index: 1051 !important;
+    }
+
     div#map {
       position: relative;
       overflow: hidden;
@@ -219,7 +224,6 @@ z-index: 1051 !important;
 </head>
 
 <body>
-
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="panel panel-default">
@@ -288,10 +292,11 @@ z-index: 1051 !important;
     });
   </script>
 
+
   <!--Jumbotron Main Heading 28 Maderson Street, Jeppestown-->
   <!--  <div id='sample'>
-<span class='vertical'>28 Maderson street, maboneng</span>
-</div> -->
+        <span class='vertical'>28 Maderson street, maboneng</span>
+        </div> -->
   <!--End Jumbotron Main Heading 28 Maderson Street, Jeppestown-->
 
 
@@ -300,7 +305,7 @@ z-index: 1051 !important;
   <section class="container-comment text-center">
     <button type="button" class="btn .btn-info" style="background-color: #269abc;  margin-top: -920px;;">
         <span data-target="#exampleModalCenter" data-toggle="modal" class="glyphicon glyphicon-bullhorn"></span>
-  </button>
+      </button>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -311,6 +316,7 @@ z-index: 1051 !important;
               <span class='vertical'>Report Crime</span>
             </div>
 
+            <!--======MAP WWITHIN MODAL WITH SEARCH BAR=======-->
             <div>
               <input id="pac-input" class="controls" type="search" placeholder="Enter a location">
               <div id="map"></div>
@@ -319,7 +325,7 @@ z-index: 1051 !important;
                 <span id="place-address"></span>
               </div>
             </div>
-
+            <!--=========END OF MAP==============-->
 
 
             <div class="container-fluid">
@@ -362,22 +368,12 @@ z-index: 1051 !important;
               </div>
             </div>
 
-
-
-
-
             <div class="container">
-
               <div class="form-group">
                 <label for="exampleFormControlTextarea3">Comment</label>
                 <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
               </div>
             </div>
-
-
-
-
-
 
             <section class="container-comment text-center">
               <!-- <span data-target="#exampleModalCenter" data-toggle="modal" class="glyphicon glyphicon-camera"></span> -->
@@ -388,7 +384,7 @@ z-index: 1051 !important;
                     <h3 class="modal-title" id="exampleModalLongTitle">Upload Image</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"></span>
-                  </button>
+                    </button>
                   </div>
                   <div class="modal-body">
                     <form action="/action_page.php">
@@ -401,9 +397,7 @@ z-index: 1051 !important;
 
             <section class="submit text-center">
               <!-- <button type="button" class="btn btn-success form-control">Submit<button> -->
-              <button type="button" class="btn btn-outline-success and-all-other-classes">
-  <a href="ReportForm.html" style="color:inherit">Submit</a>
-</button>
+              <button type="button" class="btn btn-outline-success and-all-other-classes"><a href="ReportForm.html" style="color:inherit">Submit</a></button>
             </section>
 
 
@@ -463,7 +457,10 @@ z-index: 1051 !important;
                 });
               }
             </script>
+
+            <!--=========SCRIPT WITH WORKING API KEY - GOOGLE MAPS=========-->
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1wMaYczjQps-ZoZqbkLmI5rMNcC_ROwQ&libraries=places&callback=initMap" async defer></script>
+
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
