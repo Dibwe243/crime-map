@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- ? <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
@@ -29,6 +29,7 @@
   <link rel="stylesheet" type="text/css" href="css/reportingStyle.css">
   <link rel="stylesheet" type="text/css" href="resources/css.mapStyle.css">
   <!-- <title>Reporting Page Gallery</title> -->
+  <link href="resources/css/jquery.datetimepicker.css" rel="stylesheet">
 
   <style>
     .navbar-light .navbar-toggler {
@@ -166,8 +167,6 @@
   color: white;
 }*/
 
-
-
     .pac-container.pac-logo {
       z-index: 1051 !important;
     }
@@ -269,7 +268,7 @@
         var coords = new google.maps.LatLng(latitude, longitude); // set lat/long object for new map
 
         var options = { // set options for map
-          zoom: 20,
+          zoom: 13,
           center: coords,
           mapTypeControl: false,
           navigationControlOptions: {
@@ -327,23 +326,22 @@
             </div>
             <!--=========END OF MAP==============-->
 
-
+          <!--======TIME AND DATE=====-->
             <div class="container-fluid">
               <div class="row" style="margin-right: -70px; margin-left: -15px;">
                 <div class="col-md-6 col-sm-6">
                   <div class="row" style="text-align: center; margin-left: 30%;">
-                    Time
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="row" style="text-align: center; margin-left: 20%;">
-                    14:09 | TUE | JUN 5
+                    <input type="text" id="datetimepicker" placeholder="time and date" />
+                    <!-- <button onclick="captureInput()">SUBMIT</button> -->
                   </div>
                 </div>
               </div>
-            </div><br>
+            </div>
+            <br>
+        <!--======END=====-->
 
 
+    <!--=====ICONS====-->
             <div class="container-fluid">
               <div class="row" style="margin-left: -70px; margin-right: -15px;">
                 <div class="col-md-6 col-sm-6">
@@ -399,8 +397,9 @@
               <!-- <button type="button" class="btn btn-success form-control">Submit<button> -->
               <button type="button" class="btn btn-outline-success and-all-other-classes"><a href="ReportForm.html" style="color:inherit">Submit</a></button>
             </section>
-
-
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="resources/js/jquery.datetimepicker.full.js"></script>
+            <script src="resources/js/capture.js"></script>
             <script>
               function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -456,6 +455,9 @@
                   infowindow.open(map, marker);
                 });
               }
+            </script>
+            <script>
+              $("#datetimepicker").datetimepicker();
             </script>
 
             <!--=========SCRIPT WITH WORKING API KEY - GOOGLE MAPS=========-->
