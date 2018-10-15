@@ -14,7 +14,7 @@ app.get('/', function(req, res){
     res.sendFile("index.html");
 });
 
-//app.use('/api/todos', todoRoutes);
+
 
 app.listen(port, function(){
     console.log("APP IS RUNNING ON PORT " + process.env.PORT);
