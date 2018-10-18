@@ -1,8 +1,14 @@
-var http = require('http');
+var express = require('express');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello Crime App');
-  console.log('Our Crime Map App is server is running on port 8080')
-  res.end();
-}).listen(8080);
+var app = express();
+
+app.use(express.static('frontEndFiles/resources'));
+
+app.get('/',(req,res)=>{
+
+  res.sendFile(__dirname + '/frontEndFiles/appLoader.html');
+});
+
+app.listen(3000,function(){
+  console.log('app is running at port 3000');
+});
