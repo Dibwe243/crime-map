@@ -1,102 +1,56 @@
+<!DOCTYPE html>
 <html>
-    <title>Locate</title>
+<head>
+	<title>Crime Map Status</title>
+
+
+  <!--Google Map API Website-->
+<!--   https://console.cloud.google.com/ -->
+
+	  <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="resources/js/google_locate.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="styling.css">
-
-    <body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 
-<!-- Button trigger modal -->
-<section class="container-comment text-center">
-  <button type="button" class="btn .btn-info" style="background-color: #269abc; margin-top: 36px;">
-        <span data-target="#exampleModalCenter" data-toggle="modal" class="glyphicon glyphicon-bullhorn"></span>
-  </button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Location Response</div>
-                    <div class="panel-body">
-                        <p>Latitude: <input id="latitude" type="text" class="form-control" value="Retrieving latitude&hellip;"/></p>
-                        <p>Longitude: <input id="longitude" type="text" class="form-control" value="Retrieving longitude&hellip;"/></p>
-                        <div id="map-container"></div>
-                        <button onclick="saveInfo()">SAVE</button>
-                    </div>
-                </div>
-            </div><!-- .col -->
-        </div><!-- .row -->
-        
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script>
-            "use strict";
-            
-            $(document).ready(function() {
-               
-            
-                // check if browser supports the geolocation api
-                if(navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(success);			// if geolocation supported, call function
-                } else {
-                      $("#location").val('Your browser doesn\'t support the geolocation api.');
-                }
-                        
-                function success(position) {
-                    var latitude		= position.coords.latitude;				// set latitude variable
-                    var longitude		= position.coords.longitude;
-                    console.log(latitude +'\n' + longitude);			// set longitude variable
-                    
-                    var mapcanvas		= document.createElement('div');		// create div to hold map
-                    mapcanvas.id = 'map';										// give this div an id of 'map'
-                    mapcanvas.style.height = '400px';							// set map height
-                    mapcanvas.style.width = '100%';								// set map width
-                    
-                    document.querySelector('#map-container').appendChild(mapcanvas);	// place new div within the 'map-container' div
-                    
-                    var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
-          
-                    var options = {												// set options for map
-                        zoom: 20,
-                        center: coords,
-                        mapTypeControl: false,
-                        navigationControlOptions: {
-                            style: google.maps.NavigationControlStyle.SMALL
-                        },
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
-                    
-                    var map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
-                    var marker = new google.maps.Marker({						// place a marker at our lat/long
-                        position:	coords,
-                        map:		map
-                    });
-                    
-                    var response = 'Latitude: ' + latitude + ' / Longitude: ' + longitude;	// build string containing lat/long
-                    $("#latitude").val(latitude);
-                    $("#longitude").val(longitude);											// write string to input field
-                }
-            
-            });
-        </script>
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--Test API--><!-- 
+    AIzaSyA5D1QPQbAZMQEuEkbJEPWX3LbDp3ieeCg -->
 
-    </body>
+ <!--      <script async defer
+  src="https://maps.googleapis.com/maps/api/js?client=AIzaSyChdBMFtKHfi-oRh6z3RG-q4emVnmWPc4g&v=3.32&callback=initMap"></script> -->
+
+
+   <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9KkcxCU4rKMbk3CzYDjhpekys8ago_oI&callback=initMap">
+    </script>
+
+
+
+<!--     AIzaSyChdBMFtKHfi-oRh6z3RG-q4emVnmWPc4g -->
+
+    <link rel="stylesheet" type="text/css" href="resources/css/mapStyle.css">
+
+<!-- 
+      <script async defer
+  src="https://maps.googleapis.com/maps/api/js?client=AIzaSyChdBMFtKHfi-oRh6z3RG-q4emVnmWPc4g&v=3.32&callback=initMap"></script> -->
+
+</head>
+<body>
+
+
+<div id="map"></div>
+
+
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="resources/js/mapJavaScript.js"></script>
+
+</body>
 </html>
-
