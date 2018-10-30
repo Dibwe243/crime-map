@@ -50,7 +50,7 @@
                 {
                   position: new google.maps.LatLng(-26.207079, 28.063712),
                   type: 'assault',
-                  icon: './resources/icons/Assault.svg'
+                  icon: 'resources/icons/Assault.svg'
                 }, {
                   position: new google.maps.LatLng(-26.206531, 28.063623),
                   type: 'burglary',
