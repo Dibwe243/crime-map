@@ -1,32 +1,32 @@
 (() => {
     "use strict";
     document.addEventListener('DOMContentLoaded',initCoordinates)
-    
+
         // check if browser supports the geolocation api
         function initCoordinates(){
             if(navigator.geolocation) {
 
                navigator.geolocation.getCurrentPosition(initMap);			// if geolocation supported, call function
-           
+
             } else {
                 $("#location").val('Your browser doesn\'t support the geolocation api.');
             }
         }
-                
+
         function initMap(position) {
             let latitude		= position.coords.latitude;				// set latitude variable
             let longitude		= position.coords.longitude;
             console.log(latitude +'\n' + longitude);			// set longitude variable
-            
+
             let mapcanvas		= document.createElement('div');		// create div to hold map
             mapcanvas.id = 'map';										// give this div an id of 'map'
             mapcanvas.style.height = '900px';							// set map height
             mapcanvas.style.width = '100%';								// set map width
-            
+
             document.querySelector('#map-container').appendChild(mapcanvas);	// place new div within the 'map-container' div
-            
+
             var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
-  
+
             var options = {												// set options for map
                 zoom: 20,
                 center: coords,
@@ -36,7 +36,7 @@
                 },
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-            
+
             var map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
             // var marker = new google.maps.Marker({						// place a marker at our lat/long
             //     position:	coords,
@@ -44,9 +44,22 @@
             // });
 
            // /client/resources/icons/Assault.svg
-            
-        
-            let locations = [ 
+           // var contentString = '<div id="content">'+
+           //       '<div id="siteNotice">'+
+           //       '</div>'+
+           //       '<div id="bodyContent">'+
+           //       '<p>Location:</p>'
+           //       '</div>';
+
+             // var infowindow = new google.maps.InfoWindow({
+             //   content: contentString
+             // });
+
+             // var infowindow = new google.maps.InfoWindow();
+
+
+var infoWindow = new google.maps.InfoWindow();
+            let locations = [
                 {
                   position: new google.maps.LatLng(-26.207079, 28.063712),
                   type: 'assault',
@@ -99,20 +112,31 @@
                     },
                     map:map
                 });
+                //display popup
+                (function (marker, data) {
+                  google.maps.event.addListener(marker, "click", function (e) {
+                  //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                  infoWindow.setContent("<div style = 'width:180px;min-height:100px'>" + "Location: " + data.position +
+                  "<br>" + "Type: " + data.type + "</div>");
+                  infoWindow.open(map, marker);
+                });
+            })(marker,locations[i]);
+
                 console.log(marker);
             }
-           
+
+
+
+
         }
-        
+
 
 
   })()
 
 /**
  * Displaying markers on the map
- *  -create a list (dummy data) of marker in json file 
+ *  -create a list (dummy data) of marker in json file
  *  -
- * 
+ *
  */
-
- 
