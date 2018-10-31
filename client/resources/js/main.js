@@ -40,13 +40,11 @@
             };
 
             var map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
-            // var marker = new google.maps.Marker({						// place a marker at our lat/long
-            //     position:	coords,
-            //     map:		map
-            // });
+           
 
-           // /client/resources/icons/Assault.svg
 
+
+var infoWindow = new google.maps.InfoWindow();
 
             let locations = [
                 {
@@ -101,8 +99,19 @@
                     },
                     map:map
                 });
+                //display popup
+                (function (marker, data) {
+                  google.maps.event.addListener(marker, "click", function (e) {
+                  //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                  infoWindow.setContent("<div style = 'width:180px;min-height:100px'>" + "Location: " + data.position +
+                  "<br>" + "Type: " + data.type + "</div>");
+                  infoWindow.open(map, marker);
+                });
+            })(marker,locations[i]);
+
                 console.log(marker);
             }
+
 
         }
 
