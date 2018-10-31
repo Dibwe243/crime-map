@@ -28,7 +28,7 @@
             var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
 
             var options = {												// set options for map
-                zoom: 15,
+                zoom: 20,
                 center: coords,
                 mapTypeControl: false,
                 navigationControlOptions: {
