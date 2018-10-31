@@ -9,7 +9,47 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<style>
+		body{
+		}
+		#crime-menu{
+			height: 100%;
+			background-color: rgba(226, 180, 61, .7);
+			background-color: rgba(68, 117, 135, .8);
+			 /* background-color: transparent;  */
+			width: 200px;
+			position: fixed;
+			box-shadow:  5px 10px rgba(142, 102, 0, .7);
 
+		}
+		.icons{
+			/* padding-top: 20px; */
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+		}
+		#map-container{
+			width: 100%;
+			height: 674px;
+		position: absolute;
+
+		}
+		#crime-menu li {
+			margin-top: 20px;
+			list-style-type: none;
+			margin-left: -30px;
+			color: #000000;
+		}
+		#search{
+			margin-top: 20px;
+			width: 65%;
+		}
+		h1{
+			text-align: center;
+			color: #677893;
+			background-color: white;
+		}
+		</style>
 
 
 </head>
@@ -17,21 +57,36 @@
 
 
 <div id="map-container"></div>
+<div id="crime-menu">
+	<h1>menu</h1>
+	<input type="search" id="search"><button type="button">search</button>
+	<ul>
+		<li><img src="resources/icons/Murder.svg" class="icons">Murder</li>
+		<li><img src="resources/icons/Assault.svg" class="icons">Assault</li>
+		<li><img src="resources/icons/Burglary.svg" class="icons">Burglary</li>
+		<li><img src="resources/icons/Hijacking.svg" class="icons">Hijacking</li>
+		<li><img src="resources/icons/Mugging.svg" class="icons">Mugging</li>
+		<li><img src="resources/icons/Protests.svg" class="icons">Protests</li>
+		<li><img src="resources/icons/Rape.svg" class="icons">Rape</li>
+		<li><img src="resources/icons/SmashGrab.svg" class="icons">SmashGrab</li>
+	</ul>
+
+</div>
 
 
 
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-   
+
     <script     src="resources/js/main.js">
     </script>
-            
-        
+
+
         </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1wMaYczjQps-ZoZqbkLmI5rMNcC_ROwQ">
-    </script> 
+    </script>
 
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
 

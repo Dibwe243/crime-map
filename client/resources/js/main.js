@@ -20,7 +20,7 @@
 
             let mapcanvas		= document.createElement('div');		// create div to hold map
             mapcanvas.id = 'map';										// give this div an id of 'map'
-            mapcanvas.style.height = '900px';							// set map height
+            mapcanvas.style.height = '100%';							// set map height
             mapcanvas.style.width = '100%';								// set map width
 
             document.querySelector('#map-container').appendChild(mapcanvas);	// place new div within the 'map-container' div
@@ -34,31 +34,18 @@
                 navigationControlOptions: {
                     style: google.maps.NavigationControlStyle.SMALL
                 },
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: 'roadmap',
+
+
             };
 
             var map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
-            // var marker = new google.maps.Marker({						// place a marker at our lat/long
-            //     position:	coords,
-            //     map:		map
-            // });
+           
 
-           // /client/resources/icons/Assault.svg
-           // var contentString = '<div id="content">'+
-           //       '<div id="siteNotice">'+
-           //       '</div>'+
-           //       '<div id="bodyContent">'+
-           //       '<p>Location:</p>'
-           //       '</div>';
-
-             // var infowindow = new google.maps.InfoWindow({
-             //   content: contentString
-             // });
-
-             // var infowindow = new google.maps.InfoWindow();
 
 
 var infoWindow = new google.maps.InfoWindow();
+
             let locations = [
                 {
                   position: new google.maps.LatLng(-26.207079, 28.063712),
@@ -124,8 +111,6 @@ var infoWindow = new google.maps.InfoWindow();
 
                 console.log(marker);
             }
-
-
 
 
         }
