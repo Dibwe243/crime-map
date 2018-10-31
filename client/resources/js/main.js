@@ -20,7 +20,7 @@
 
             let mapcanvas		= document.createElement('div');		// create div to hold map
             mapcanvas.id = 'map';										// give this div an id of 'map'
-            mapcanvas.style.height = '100%';							// set map height
+            mapcanvas.style.height = '100vh';							// set map height
             mapcanvas.style.width = '100%';								// set map width
 
             document.querySelector('#map-container').appendChild(mapcanvas);	// place new div within the 'map-container' div
