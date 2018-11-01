@@ -14,9 +14,11 @@
         }
 
         function initMap(position) {
+            let styles = [{ "stylers": [{ "saturation": -80 }, { "gamma": 1 }] }, { "featureType": "water", "stylers": [{ "lightness": -12 }] }];
             let latitude		= position.coords.latitude;				// set latitude variable
             let longitude		= position.coords.longitude;
-            console.log(latitude +'\n' + longitude);			// set longitude variable
+            //var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
+           
 
             let mapcanvas		= document.createElement('div');		// create div to hold map
             mapcanvas.id = 'map';										// give this div an id of 'map'
@@ -25,9 +27,13 @@
 
             document.querySelector('#map-container').appendChild(mapcanvas);	// place new div within the 'map-container' div
 
-            var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
+            let styledMap = new google.maps.StyledMapType(styles, { name: "Styled Map" });
 
-            var options = {												// set options for map
+            let coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
+
+            //var myOptions = { scrollwheel: false, zoom: 13, center: latlng, mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] } };
+
+            let options = {												// set options for map
                 zoom: 20,
                 center: coords,
                 mapTypeControl: false,
@@ -35,11 +41,14 @@
                     style: google.maps.NavigationControlStyle.SMALL
                 },
                 mapTypeId: 'roadmap',
+                mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] }
 
 
             };
 
-            var map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
+            let map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style');
            
 
 
@@ -95,7 +104,7 @@ var infoWindow = new google.maps.InfoWindow();
                     position:locations[i].position,
                     icon:{
                         url:locations[i].icon,
-                        scaledSize: new google.maps.Size(30,30)
+                        scaledSize: new google.maps.Size(40,40)
                     },
                     map:map
                 });
