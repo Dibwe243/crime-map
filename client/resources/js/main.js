@@ -34,7 +34,7 @@
             //var myOptions = { scrollwheel: false, zoom: 13, center: latlng, mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] } };
 
             let options = {												// set options for map
-                zoom: 20,
+                zoom: 14,
                 center: coords,
                 mapTypeControl: false,
                 navigationControlOptions: {
@@ -56,58 +56,71 @@
 var infoWindow = new google.maps.InfoWindow();
 
             let locations = [
-                {
-                  position: new google.maps.LatLng(-26.207079, 28.063712),
-                  type: 'assault',
-                  icon: 'resources/icons/Assault.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.206531, 28.063623),
-                  type: 'burglary',
-                  icon: 'resources/icons/Burglary.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.206397, 28.064391),
-                  type: 'hijacking',
-                  icon: 'resources/icons/Hijacking.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.206634, 28.064422),
-                  type: 'mugging',
-                  icon: 'resources/icons/Mugging.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.206232, 28.063607),
-                  type: 'murder',
-                  icon: 'resources/icons/Murder.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.206266, 28.063596),
-                  type: 'protests',
-                  icon: 'resources/icons/Protests.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.205790, 28.064296),
-                  type: 'rape',
-                  icon: 'resources/icons/Rape.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.205836, 28.063499),
-                  type: 'smash_grab',
-                  icon: 'resources/icons/SmashGrab.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.205278, 28.062643),
-                  type: 'assault',
-                  icon: 'resources/icons/Assault.svg'
-                }, {
-                  position: new google.maps.LatLng(-26.204777, 28.062592),
-                  type: 'burglary',
-                  icon: 'resources/icons//Protests.svg'
+              {
+                position: new google.maps.LatLng(-26.207079, 28.063712),
+                type: 'assault',
+                icon: 'resources/icons/Assault.svg'
+              }, {
+                position: new google.maps.LatLng(-26.206531, 28.063623),
+                type: 'burglary',
+                icon: 'resources/icons/Burglary.svg'
+              }, {
+                position: new google.maps.LatLng(-26.206397, 28.064391),
+                type: 'hijacking',
+                icon: 'resources/icons/Hijacking.svg'
+              }, {
+                position: new google.maps.LatLng(-26.206634, 28.064422),
+                type: 'mugging',
+                icon: 'resources/icons/Mugging.svg'
+              }, {
+                position: new google.maps.LatLng(-26.206232, 28.063607),
+                type: 'murder',
+                icon: 'resources/icons/Murder.svg'
+              }, {
+                position: new google.maps.LatLng(-26.206266, 28.063596),
+                type: 'protests',
+                icon: 'resources/icons/Protests.svg'
+              }, {
+                position: new google.maps.LatLng(-26.205790, 28.064296),
+                type: 'rape',
+                icon: 'resources/icons/Rape.svg'
+              }, {
+                position: new google.maps.LatLng(-26.205836, 28.063499),
+                type: 'smash_grab',
+                icon: 'resources/icons/SmashGrab.svg'
+              }, {
+                position: new google.maps.LatLng(-26.205278, 28.062643),
+                type: 'assault',
+                icon: 'resources/icons/Assault.svg'
+              }, {
+                position: new google.maps.LatLng(-26.204777, 28.062592),
+                type: 'burglary',
+                icon: 'resources/icons/Protests.svg'
+              }, {
+                position: new google.maps.LatLng(latitude, longitude),
+                type: 'current-position',
+                icon: 'resources/icons/maps-and-flags.svg'
+              }
+            ];
+            let marker,i;
+            for(i=0; i< locations.length ; i++){
+              marker = new google.maps.Marker({
+                  position:locations[i].position,
+                  icon:{
+                      url:locations[i].icon,
+                      scaledSize: new google.maps.Size(40,40)
+                  },
+                  map:map
+              });
+              marker.addListener('click', toggleBounce);
+              function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                  marker.setAnimation(null);
+                } else {
+                  marker.setAnimation(google.maps.Animation.BOUNCE);
                 }
-              ];
-              let marker,i;
-              for(i=0; i< locations.length-1 ; i++){
-                marker = new google.maps.Marker({
-                    position:locations[i].position,
-                    icon:{
-                        url:locations[i].icon,
-                        scaledSize: new google.maps.Size(60,60)
-                    },
-                    map:map
-                });
+              }
+
                 //display popup
                 (function (marker, data) {
                   google.maps.event.addListener(marker, "click", function (e) {
