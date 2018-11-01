@@ -2,8 +2,19 @@
     "use strict";
     document.addEventListener('DOMContentLoaded',initCoordinates)
 
+    
         // check if browser supports the geolocation api
         function initCoordinates(){
+          setTimeout( function(){
+            document.getElementById('app-load').style.visibility ='hidden';
+          },2000);
+      
+          var map_container = document.getElementById('map-container');
+          var crime_menu = document.getElementById('crime-menu');
+            
+            map_container.style.visibility = 'visible';
+            crime_menu.style.visibility = 'visible';
+      
             if(navigator.geolocation) {
 
                navigator.geolocation.getCurrentPosition(initMap);			// if geolocation supported, call function
@@ -14,6 +25,8 @@
         }
 
         function initMap(position) {
+
+          
             let styles = [{ "stylers": [{ "saturation": -80 }, { "gamma": 1 }] }, { "featureType": "water", "stylers": [{ "lightness": -12 }] }];
             let latitude		= position.coords.latitude;				// set latitude variable
             let longitude		= position.coords.longitude;
@@ -34,7 +47,7 @@
             //var myOptions = { scrollwheel: false, zoom: 13, center: latlng, mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] } };
 
             let options = {												// set options for map
-                zoom: 20,
+                zoom: 14,
                 center: coords,
                 mapTypeControl: false,
                 navigationControlOptions: {

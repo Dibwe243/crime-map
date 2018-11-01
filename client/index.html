@@ -10,6 +10,98 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<style>
+        *{
+            box-shadow: lightskyblue;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+            
+        }
+        .box .b{
+            border-radius: 50%;
+            border-left: 4px solid;
+            border-right: 4px solid;
+            border-top: 4px solid transparent !important;
+            border-bottom: 4px solid transparent !important;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation: ro 2s infinite;
+
+        }
+        .box .b1{
+
+          border-color: #1e3885;
+          width: 120px;
+          height: 120px;
+
+
+        }
+        .box .b2{
+
+          border-color: #c48a16;
+          width: 100px;
+          height: 100px;
+          animation-delay: 0.2s;
+          }
+        .box .b3{
+
+           border-color: #0c9746;
+           width: 80px;
+           height: 80px;
+           animation-delay: 0.4s;
+           }
+        .box .b4{
+
+           border-color: #141b1a;
+           width: 60px;
+           height: 60px;
+           animation-delay: 0.6s;
+            }
+            @keyframes ro{
+                0%{
+                    transform: translate(-50%,-50%) rotate(0deg);
+                }
+                50%{
+                    transform: translate(-50%,-50%) rotate(-180deg);
+                }
+                100%{
+                    transform: translate(-50%,-50%) rotate(-360deg);
+                }
+
+            }
+            p{
+                font-family: monospace;
+                
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		#crime-menu{
 			height: 100%;
@@ -31,11 +123,13 @@
 			width: 100%;
 			height: 674px;
 		position: absolute;
+		visibility: hidden;
 
 		}
 		#crime-menu{
 			padding-left:10px;
 			padding-top:10px;
+			visibility: hidden;
 		}
 		#crime-menu li {
 			margin-top: 20px;
@@ -55,13 +149,28 @@
 			text-align: center;
 			color: #cdcfd1;
 			background-color: rgba(68, 117, 135, .9);
-;
+
 		}
 		</style>
 
 
 </head>
 <body >
+		<div class="box" id="app-load">
+        
+				<div class="b b1"></div>
+				<div class="b b2"></div>
+				<div class="b b3"></div>
+				<div class="b b4"></div>
+				
+			   
+		
+				
+			
+			<div > 
+				<p>loading crime map</p>
+			</div>
+			</div>
 
 
 <div id="map-container"></div>
@@ -88,10 +197,20 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 
     <script     src="resources/js/main.js">
-    </script>
-
-
-        </script>
+	</script>
+	<script>
+		// window.addEventListener('load',function(){
+		// 	var map_container = document.getElementById('map-container');
+		// 	var crime_menu = document.getElementById('crime-menu');
+			
+		// 	map_container.style.visibility = 'visible';
+		// 	crime_menu.style.visibility = 'visible';
+		// 	setTimeout(function(){
+		// 		document.getElementById('app-load').style.visibility = 'hidden';
+		// 	},2000)
+			
+		// })
+	</script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1wMaYczjQps-ZoZqbkLmI5rMNcC_ROwQ">
     </script>
