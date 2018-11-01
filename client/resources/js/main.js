@@ -104,7 +104,7 @@ var infoWindow = new google.maps.InfoWindow();
                     position:locations[i].position,
                     icon:{
                         url:locations[i].icon,
-                        scaledSize: new google.maps.Size(40,40)
+                        scaledSize: new google.maps.Size(60,60)
                     },
                     map:map
                 });

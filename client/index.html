@@ -10,16 +10,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<style>
-		body{
-		}
+		
 		#crime-menu{
 			height: 100%;
-			background-color: rgba(226, 180, 61, .7);
-			background-color: rgba(68, 117, 135, .8);
+			/* background-color: rgba(226, 180, 61, .7); */
+			background-color: rgba(68, 117, 135, .9);
 			 /* background-color: transparent;  */
 			width: 200px;
 			position: fixed;
-			box-shadow:  5px 10px rgba(142, 102, 0, .7);
+			/* box-shadow:  5px 10px rgba(142, 102, 0, .4); */
 
 		}
 		.icons{
@@ -34,6 +33,10 @@
 		position: absolute;
 
 		}
+		#crime-menu{
+			padding-left:10px;
+			padding-top:10px;
+		}
 		#crime-menu li {
 			margin-top: 20px;
 			list-style-type: none;
@@ -41,13 +44,18 @@
 			color: #000000;
 		}
 		#search{
-			margin-top: 20px;
-			width: 65%;
+		
+			margin-top: 20px ;
+			margin-left:35px;
+			margin:auto;
+
+			width: 90%;
 		}
 		h1{
 			text-align: center;
-			color: #677893;
-			background-color: white;
+			color: #cdcfd1;
+			background-color: rgba(68, 117, 135, .9);
+;
 		}
 		</style>
 
@@ -58,8 +66,8 @@
 
 <div id="map-container"></div>
 <div id="crime-menu">
-	<h1>menu</h1>
-	<input type="search" id="search"><button type="button">search</button>
+	<h2>Search</h2>
+	<input type="search" id="search">
 	<ul>
 		<li><img src="resources/icons/Murder.svg" class="icons">Murder</li>
 		<li><img src="resources/icons/Assault.svg" class="icons">Assault</li>
