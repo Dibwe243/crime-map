@@ -105,6 +105,10 @@ var infoWindow = new google.maps.InfoWindow();
             let marker,i;
             for(i=0; i< locations.length ; i++){
               marker = new google.maps.Marker({
+
+               
+
+
                   position:locations[i].position,
                   icon:{
                       url:locations[i].icon,
@@ -123,10 +127,12 @@ var infoWindow = new google.maps.InfoWindow();
 
                 //display popup
                 (function (marker, data) {
+
                   google.maps.event.addListener(marker, "click", function (e) {
+                    
+                    
                   //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
-                  infoWindow.setContent("<div style = 'width:180px;min-height:100px'>" + "Location: " + data.position +
-                  "<br>" + "Type: " + data.type + "</div>");
+                  infoWindow.setContent("<div style = 'width:180px;min-height:100px'> Type: " + data.type + "</div>");
                   infoWindow.open(map, marker);
                 });
             })(marker,locations[i]);
