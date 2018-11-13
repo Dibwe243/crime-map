@@ -61,12 +61,37 @@
 			position: absolute;
 			bottom: 5%;
 			right: 5%;
-			z-index: 100;
+			z-index: 90;
 			padding: 20px;
 			background-color: #f44336; /* Red */
 			color: white;
 			
 
+		}
+		.loader{
+			position:fixed;
+			z-index:99;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			background: white;
+
+			display:flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.loader.hidden{
+			animation:fadeOut 1s;
+			animation-fill-mode: forwards;
+
+		}
+		@keyframes fadeOut{
+			100%{
+				opacity:0;
+				visibility: hidden;
+			}
 		}
 		</style>
 
@@ -74,7 +99,7 @@
 </head>
 <body >
 
-
+<div class="loader"><img src="resources/css/img/animation2.gif" alt="loading..."/></div>
 <div id="map-container"></div>
 <div id="crime-menu">
 	<h2>Search</h2>

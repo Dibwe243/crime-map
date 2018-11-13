@@ -55,7 +55,7 @@ p{
   left: 3em;
 }
 
-@keyframes reveal {
+/* @keyframes reveal {
   from {
     transform: scale(0.001);
   }
@@ -81,6 +81,6 @@ p{
 .dot4 {
   animation-name: reveal;
   animation-direction: reverse;
-}
+} */
 
 /*===========END============*/

@@ -1,5 +1,10 @@
 (() => {
     "use strict";
+    window.addEventListener('load',function(){
+      const loader = document.querySelector('.loader');
+      console.log(loader);
+      loader.classList.add('hidden');
+    });
     document.addEventListener('DOMContentLoaded',initCoordinates)
 
         // check if browser supports the geolocation api
@@ -59,6 +64,7 @@ var infoWindow = new google.maps.InfoWindow();
               {
                 position: new google.maps.LatLng(-26.207079, 28.063712),
                 type: 'assault',
+                
                 icon: 'resources/icons/Assault.svg'
               }, {
                 position: new google.maps.LatLng(-26.206531, 28.063623),
