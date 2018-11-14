@@ -109,6 +109,7 @@ var infoWindow = new google.maps.InfoWindow();
               }
             ];
             let marker,i;
+           
             for(i=0; i< locations.length ; i++){
               marker = new google.maps.Marker({
 
