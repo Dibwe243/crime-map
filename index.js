@@ -15,7 +15,7 @@ app.get('/', function(req, res){
 });
 
 
-
+app.use('/api/v0.1/', crimeRoutes );
 app.listen(port, function(){
     console.log("APP IS RUNNING ON PORT " + port);
 });
