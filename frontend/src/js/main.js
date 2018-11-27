@@ -1,19 +1,31 @@
+import {MDCDrawer} from "@material/drawer";
+import {MDCTopAppBar} from "@material/top-app-bar";
+const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+
+
+const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+topAppBar.setScrollTarget(document.getElementById('main-content'));
+topAppBar.listen('MDCTopAppBar:nav', () => {
+  drawer.open = !drawer.open;
+});
+
+
 (() => {
-    "use strict";
-    
-    const path = require('path');
+  "use strict";
+  
+  // const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+  // list.wrapFocus = true;
+
     const murderIncon =require('../../src/icons/Murder.svg');
     const curentLocation = require('../../src/icons/maps-and-flags.svg');
+    const loading = require("../../src/css/img/animation.gif");
 
     console.log(`here is the image ${murderIncon}`)
 
 
     
     window.addEventListener('load',function(){
-      const arr = [1, 2, 3];
-      const iAmJavascriptES6 = () => console.log(...arr);
-      window.iAmJavascriptES6 = iAmJavascriptES6;
-
+     
       const loader = document.querySelector('.loader');
       console.log(loader);
       loader.classList.add('hidden');
@@ -163,7 +175,21 @@ var infoWindow = new google.maps.InfoWindow();
 
         }
 
-
+        function myFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("search");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUl");
+          li = ul.getElementsByTagName("li");
+          for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+          }
 
   })()
 
