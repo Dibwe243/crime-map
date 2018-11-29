@@ -18,7 +18,7 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 
     const murderIncon =require('../../src/icons/Murder.svg');
     const curentLocation = require('../../src/icons/maps-and-flags.svg');
-    const loading = require("../../src/css/img/animation.gif");
+    const loading = require("../../src/css/img/splash_screen.png");
 
     console.log(`here is the image ${murderIncon}`)
 
