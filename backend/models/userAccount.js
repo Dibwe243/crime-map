@@ -5,17 +5,25 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userAccountSchema = new mongoose.Schema({
-	user_name: {
+	userName: {
 		type: String,
 		unique: true
 	},
-
-	user_password: {
+	firstName: {
+		type: String,
+		unique: true
+	},
+	lastName:{ 
 		type: String
 	},
-
-	user_confirmPassword: {
+	userPassword: {
 		type: String
+	},
+	reportCrime: {
+		type: Array
+	},
+	docketDetails: {
+		type: Array
 	}
 });
 
