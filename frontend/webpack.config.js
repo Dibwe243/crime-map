@@ -54,59 +54,5 @@ module.exports =[{
     ]
   }
 }]
-/* module.exports = {
-  entry: './src/js/main.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  module:{
-      rules:[
-          
-          { 
-            test: /\.css$/, 
-            // loader: "style-loader!css-loader"
-            include: path.appSrc,
-                loaders: [
-                    require.resolve('style-loader'),
-                    require.resolve('css-loader'),
-                    require.resolve('sass-loader')
-               ],      
-           },
-           
-           {
-            test: /\.scss$/,
-            loaders: [
-              'style-loader',
-              'css-loader',
-              'resolve-url-loader'
-             
-            ]
-           
-          },
-          
-           
-          {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use:{
-              loader: 'babel-loader',
-              options: {
-                presets: ['env']
-              }
 
-            }
-            
-         
-          },
-          {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: ['file-loader']
-            // test: /\.(jpe?g|png|gif|svg)$/i, 
-            // loader: "file-loader?name=./src/icons/[name].[ext]"
-          }
-            
-      ]
-  }
-}; */
 
