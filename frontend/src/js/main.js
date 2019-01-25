@@ -1,5 +1,8 @@
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
+import {MDCRipple} from '@material/ripple';
+
+const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 
 

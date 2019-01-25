@@ -21,9 +21,6 @@ var userAccountSchema = new mongoose.Schema({
 	},
 	reportCrime: {
 		type: Array
-	},
-	docketDetails: {
-		type: Array
 	}
 });
 
