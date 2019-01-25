@@ -15,7 +15,7 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 
 (() => {
   "use strict";
-  
+
   // const list = MDCList.attachTo(document.querySelector('.mdc-list'));
   // list.wrapFocus = true;
 
@@ -26,9 +26,9 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
     console.log(`here is the image ${murderIncon}`)
 
 
-    
+
     window.addEventListener('load',function(){
-     
+
       const loader = document.querySelector('.loader');
       console.log(loader);
       loader.classList.add('hidden');
@@ -51,7 +51,7 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
             let latitude		= position.coords.latitude;				// set latitude variable
             let longitude		= position.coords.longitude;
             //var coords = new google.maps.LatLng(latitude,longitude);	// set lat/long object for new map
-           
+
 
             let mapcanvas		= document.createElement('div');		// create div to hold map
             mapcanvas.id = 'map';										// give this div an id of 'map'
@@ -82,7 +82,7 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
             let map = new google.maps.Map(document.getElementById("map"), options);	// create new map using settings above
             map.mapTypes.set('map_style', styledMap);
             map.setMapTypeId('map_style');
-           
+
 
 
 
@@ -92,7 +92,7 @@ var infoWindow = new google.maps.InfoWindow();
               {
                 position: new google.maps.LatLng(-26.207079, 28.063712),
                 type: 'assault',
-                
+
                 icon: 'resources/icons/Assault.svg'
               }, {
                 position: new google.maps.LatLng(-26.206531, 28.063623),
@@ -137,11 +137,11 @@ var infoWindow = new google.maps.InfoWindow();
               }
             ];
             let marker,i;
-           
+
             for(i=0; i< locations.length ; i++){
               marker = new google.maps.Marker({
 
-               
+
 
 
                   position:locations[i].position,
@@ -164,8 +164,8 @@ var infoWindow = new google.maps.InfoWindow();
                 (function (marker, data) {
 
                   google.maps.event.addListener(marker, "click", function (e) {
-                    
-                    
+
+
                   //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
                   infoWindow.setContent("<div style = 'width:180px;min-height:100px'> Type: " + data.type + "</div>");
                   infoWindow.open(map, marker);
@@ -194,6 +194,7 @@ var infoWindow = new google.maps.InfoWindow();
           }
           }
 
+      
   })()
 
 /**

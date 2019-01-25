@@ -12,14 +12,14 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="bundle.css"/>
 	<style>
-		
 
 
-	
-	
-	
+
+
+
+
 	</style>
-	
+
 </head>
 <body >
 
@@ -30,7 +30,7 @@
         <h3 class="mdc-drawer__title">Mail</h3>
         <h6 class="mdc-drawer__subtitle">email@material.io</h6>
       </div>
-      
+
 		<div class="mdc-drawer__content">
 		  <div class="mdc-list">
 			<a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
@@ -48,7 +48,7 @@
 		  </div>
 		</div>
 	  </aside>
-	
+
 	  <div class="mdc-drawer-app-content">
 			<header class="mdc-top-app-bar app-bar" id="app-bar">
 			  <div class="mdc-top-app-bar__row">
@@ -61,36 +61,83 @@
 
       <main class="main-content" id="main-content">
             <div class="mdc-top-app-bar--fixed-adjust">
-                
-
                 <div id="map-container"></div>
-              
-              
 							<div id="disclaimer">DUMMY DATA</div>
-							
-							<button class="mdc-fab" aria-label="Add">
+							<button class="mdc-fab" aria-label="Add" onclick="hideShow()">
 								<span class="mdc-fab__icon material-icons">add</span>
 							</button>
 
 							</button>
             </div>
       </main>
-				 
-
   </div>
 
-	
+	<!-- types of crime -->
+	<section id="crimetype">
+		<nav class="nav">
+			<ul class="navbar-nav">
+	    
+	    	<li class="nav-item"><h4>Select Crime Type</h4></li>
+			</ul>
+	  </nav>
+
+
+		<div class="row text-center">
+	 		<div class="col"><img src="src/icons/Assault.svg" alt="Assault"><p>Assault</p></div>
+	 		<div class="col"><img src="src/icons/Burglary.svg" alt="Burglary"><p>Burglary</p></div>
+	 		<div class="col"><img src="src/icons/Hijacking.svg" alt="Hijacking"><p>Hijacking</p></div>
+ 	</div>
+
+	<div class="row text-center">
+		<div class="col"><img src="src/icons/Mugging.svg" alt="Mugging"><p>Mugging</p></div>
+		<div class="col"><img src="src/icons/Murder.svg" alt="Murder"><p>Murder</p></div>
+		<div class="col"><img src="src/icons/Protests.svg" alt="Protests"><p>Protests</p></div>
+	</div>
+
+	<div class="row text-center">
+		<div class="col"><img src="src/icons/Rape.svg" alt="Sexual Assault"><p>Sexual Assault</p></div>
+		<div class="col"><img src="src/icons/Robbery.svg" alt="Robbery"><p>Robbery</p></div>
+		<div class="col"><img src="src/icons/SmashGrab.svg" alt="SmashGrab"><p>SmashGrab</p></div>
+	</div>
+
+		<!--
+
+
+
+		<div class="row">
+		  <div class="column">
+		     <a href="index.html"><img src="src/icons/Rape.svg" alt="Rape" style="width:70%"><div class="centered6">Rape</div>  </a>
+		  </div>
+		  <div class="column">
+		    <a href="index.html"><img src="src/icons/Robbery.svg" alt="Robbery" style="width:70%"><div class="centered7">Robbery</div>  </a>
+		  </div>
+		  <div class="column">
+		    <a href="index.html"><img src="src/icons/SmashGrab.svg" alt="SmashGrab" style="width:70%"><div class="centered8">SmashGrab</div>  </a>
+		  </div>
+		</div> -->
+
+	</section>
 
 
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-       
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1wMaYczjQps-ZoZqbkLmI5rMNcC_ROwQ">
 	</script>
 	<script src="bundle.js"> </script>
+	<script type="text/javascript">
+	function hideShow() {
+		var displaySection = document.getElementById("crimetype");
 
+		if (displaySection.style.display === "none") {
+			displaySection.style.display = "block";
+		} else {
+			displaySection.style.display = "none";
+		}
+	}
+	</script>
 
 
 </body>
