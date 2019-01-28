@@ -98,6 +98,7 @@ li {
 }
 
 li h4{
+  padding-top: 5%;
   font-weight: 200;
   letter-spacing: 0.2rem;
   vertical-align: middle;
@@ -111,26 +112,20 @@ li a {
   text-decoration: none;
 }
 
+#crimetype #close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 5%;
+  padding-top: 6%;
+}
 .row .col img{
 padding: 7%;
 width: 90%;
 height: auto;
 }
-// .column {
-//   float: left;
-//   width: 33.33%;
-//   padding: 5px;
-// }
-// .column2 {
-//   float: left;
-//   width: 33.33%;
-//   padding: 5px;
-// }
-// .column3{
-//   float: left;
-//   width: 33.33%;
-//   padding: 5px;
-// }
+
+
 .centered{
   position: absolute;
   top:58%;
