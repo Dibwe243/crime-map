@@ -180,7 +180,25 @@ height: auto;
   left:76%;
   transform: translate(-20%, -20%);
 }
+.container-fluid{
+  display: none;
+  padding-top: 20%;
+  
+  
+}
+#attachementsModal{
+  margin-top: 5%
+}
+.list-group{
+  border:none !important;
+  padding: 0 !important;
 
+}
+.list-group .list-group-item{
+  border:none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 /* Clearfix (clear floats) */
 .row::after {
   content: "";

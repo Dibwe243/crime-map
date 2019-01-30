@@ -178,6 +178,19 @@ var infoWindow = new google.maps.InfoWindow();
 
         }
 
+        $(document).ready(function(){
+          
+          $("img").click(function(){
+            $("#crimetype").css("display","none");
+            $("#optionlist").css("display","block");
+
+
+
+            
+          })
+      
+        });
+
         function myFunction() {
           var input, filter, ul, li, a, i;
           input = document.getElementById("search");

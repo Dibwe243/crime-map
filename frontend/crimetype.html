@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 <style>
 * {
@@ -171,6 +173,219 @@ li a {
     <a href="index.html"><img src="src/icons/SmashGrab.svg" alt="SmashGrab" style="width:70%"><div class="centered8">SmashGrab</div>  </a>
   </div>
 </div>
+
+
+
+
+					<!-- start of crime details selection list -->
+
+					<div class="container-fluid">
+              <ul class="list-group">
+                    <li class="list-group-item"><button type="button" class="btn btn-danger btn-block"  data-toggle="modal" data-target="#address">Add address</button></li>
+                    <li class="list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#dateModal"> enter date when crime occured</button></li>
+                    <li class=" list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#discription">add discription </button></li>
+                    <li class="list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#attachementsModal">attach evidance</button></li>
+                    <li class="list-group-item" ><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#docket">add docket details</button></li>
+                    <li class="list-group-item"><button type="button" class="btn btn-info btn-block"> save</button></li>
+              </ul>
+        </div>
+
+        <!--end of crime details selection list -->
+
+
+
+
+<!-- address  Modal -->
+<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><small>Add Address</small></h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="form group">
+        <label for="address">enter address</label>
+        <input type="text" name="address" class="form-control" placeholder="enter address of where crime occured" />
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end of address modal -->
+
+
+<!-- date of crime  Modal -->
+<div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><small>provide the date on which crime occured</small></h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="form group">
+        <label for="crimedate">enter date</label>
+        <input type="date" name="crimedate" class="form-control" placeholder="provide date on which crime occured" />
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end of date modal -->
+
+<!-- attachements / evidence Modal -->
+<div class="modal fade" id="attachementsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><small>attache  evidence documents</small></h5>
+
+    </div>
+    <div class="modal-body">
+
+
+
+
+
+      <div class="custom-file m-2">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">upload picture</label>
+      </div>
+
+      <div class="custom-file m-2">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">upload video</label>
+      </div>
+
+      <div class="custom-file m-2">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">upload audio</label>
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end of attachements modal -->
+
+
+
+
+
+<!-- discription  Modal -->
+<div class="modal fade" id="discription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><small>discribe the incident</small></h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="form group">
+
+        <textarea   class="form-control" rows="20" placeholder="give a brief discription of the crime" ></textarea>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end of discription modal -->
+
+
+<!-- additional dockes details  Modal -->
+<div class="modal fade" id="docket" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle"><small>additional docket iformation</small></h5>
+
+    </div>
+    <div class="modal-body">
+                  <div class="form-group">
+                    <label for="casenumber">Case Number</label>
+                    <input type="text" name="casenumber" class="form-control" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="casenumber">Officer Details</label>
+                    <input type="text" name="officerdetails" class="form-control" placeholder="full name" />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="casenumber">Case Status</label>
+                    <input type="text" name="casestatus" class="form-control" placeholder="status"/>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="casenumber">Judgement</label>
+                    <input type="text" name="judgement" class="form-control" placeholder="jusdgement" />
+
+                  </div>
+
+
+
+                    <button type="button" class="btn btn-secondary btn-block ">Save</button>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end of additional dockes details modal -->
+
+
+
+
+<script>
+  $(document).ready(function(){
+    console.log("modals are ready");
+  })
+</script>
+
+
+
+
+
+
 
 </body>
 </html>
