@@ -63,7 +63,7 @@
             <div class="mdc-top-app-bar--fixed-adjust">
                 <div id="map-container"></div>
 							<div id="disclaimer">DUMMY DATA</div>
-							<button class="mdc-fab" aria-label="Add" onclick="hideShow()">
+							<button class="mdc-fab" aria-label="Add" onclick="showCrimeTypes();">
 								<span class="mdc-fab__icon material-icons">add</span>
 							</button>
 
@@ -79,10 +79,8 @@
 				<li class="nav-item"><h4>Select Crime Type</h4></li>
 
 			</ul>
-			<p id="close">✖</p>
+			<p id="close" onclick="hideCrimeTypes();">✖</p>
 	  </nav>
-
-
 
 		<div class="row text-center">
 	 		<div class="col"><img src="src/icons/Assault.svg" alt="Assault"><p>Assault</p></div>
@@ -113,15 +111,19 @@
 	</script>
 	<script src="bundle.js"> </script>
 	<script type="text/javascript">
-	function hideShow() {
+	//show section
+	function showCrimeTypes() {
 		var displaySection = document.getElementById("crimetype");
 
-		if (displaySection.style.display === "none") {
-			displaySection.style.display = "block";
-		} else {
-			displaySection.style.display = "none";
-		}
+				displaySection.style.display = "block";
 	}
+	//hide section
+	function hideCrimeTypes() {
+		var displaySection = document.getElementById("crimetype");
+
+				displaySection.style.display = "none";
+	}
+
 	</script>
 
 
