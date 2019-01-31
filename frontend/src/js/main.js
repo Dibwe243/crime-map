@@ -188,6 +188,11 @@ var infoWindow = new google.maps.InfoWindow();
 
             
           })
+          $(".glyphicon-chevron-left").click(function(){
+            $("#optionlist").hide();
+            $("#crimetype").show();
+            
+          })
       
         });
 
