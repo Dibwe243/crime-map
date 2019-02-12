@@ -119,6 +119,120 @@ img{
   animation-fill-mode: forwards;
 
 }
+
+// types of crime
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  width: 100vw;
+  text-align: center;
+  height: 10vh;
+}
+
+li h4{
+  padding-top: 5%;
+  font-weight: 200;
+  letter-spacing: 0.2rem;
+  vertical-align: middle;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#crimetype #close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 5%;
+  padding-top: 6%;
+}
+.row .col img{
+padding: 7%;
+width: 90%;
+height: auto;
+}
+
+
+.centered{
+  position: absolute;
+  top:58%;
+  left:11%;
+  transform: translate(-20%, -20%);
+}
+ .centered3{
+  position: absolute;
+  top:108%;
+  left:12%;
+  transform: translate(-50%, -50%);
+}
+.centered4{
+ position: absolute;
+ top:108%;
+ left:44%;
+ transform: translate(-50%, -50%);
+}
+.centered5{
+ position: absolute;
+ top:108%;
+ left:77%;
+ transform: translate(-50%, -50%);
+}
+.centered6{
+ position: absolute;
+ top:155%;
+ left:11%;
+ transform: translate(-50%, -50%);
+}
+.centered7{
+ position: absolute;
+ top:155%;
+ left:45%;
+ transform: translate(-50%, -50%);
+}
+.centered8{
+ position: absolute;
+ top:155%;
+ left:77%;
+ transform: translate(-50%, -50%);
+}
+.centered1{
+  position: absolute;
+  top:58%;
+  left:44%;
+  transform: translate(-20%, -20%);
+}
+.centered2{
+  position: absolute;
+  top:58%;
+  left:76%;
+  transform: translate(-20%, -20%);
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+section{
+  display: none;
+}
 @keyframes fadeOut{
   100%{
     opacity:0;
