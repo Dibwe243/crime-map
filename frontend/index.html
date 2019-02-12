@@ -11,6 +11,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="bundle.css"/>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
 	<style>
 
 
@@ -61,16 +79,268 @@
 
       <main class="main-content" id="main-content">
             <div class="mdc-top-app-bar--fixed-adjust">
+
+
+
                 <div id="map-container"></div>
+
+
 							<div id="disclaimer">DUMMY DATA</div>
-							<button class="mdc-fab" aria-label="Add" onclick="showCrimeTypes();">
+
+							<button class="mdc-fab" aria-label="Add">
+
 								<span class="mdc-fab__icon material-icons">add</span>
 							</button>
 
 							</button>
-            </div>
-      </main>
+
+						</div>
+
+						<!-- crime type category grid -->
+
+						<div class="container" id="crime-type">
+
+                <div class="row m-4">
+															<div class="col-4 "><button id="btn-modal"><img src="/src/icons/Assault.svg" alt="img assault"></button></div>
+															<div class="col-4 "><img src="/src/icons/Burglary.svg" alt="img assault"></div>
+															<div class="col-4 "><img src="/src/icons/Hijacking.svg" alt="img assault"></div>
+								</div>
+
+								<div class="row m-4">
+															<div class="col-4 "><img src="/src/icons/maps-and-flags.svg" alt="img assault"></div>
+															<div class="col-4 "><img src="/src/icons/Mugging.svg" alt="img assault"></div>
+															<div class="col-4 "><img src="/src/icons/Murder.svg" alt="img assault"></div>
+								</div>
+
+								<div class="row m-4">
+															<div class="col-4 "><img src="/src/icons/Protests.svg" alt="img assault"></div>
+															<div class="col-4 "><img src="/src/icons/Rape.svg" alt="img assault"></div>
+															<div class="col-4 "><img src="/src/icons/Robbery.svg" alt="img assault"></div>
+								</div>
+
+								<div class="row  m-4 ">
+															<div class="col-4 "><img src="/src/icons/Mugging.svg" alt="img assault"></div>
+
+						</div>
+					</div>
+					<!-- end of crime type category -->
+
+					<!-- start of crime details selection list -->
+
+					<div class="container-fluid">
+								<ul class="list-group">
+											<li class="list-group-item"><button type="button" class="btn btn-danger btn-block"  data-toggle="modal" data-target="#address">Add address</button></li>
+											<li class="list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#dateModal"> enter date when crime occured</button></li>
+											<li class=" list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#discription">add discription </button></li>
+											<li class="list-group-item"><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#attachementsModal">attach evidance</button></li>
+											<li class="list-group-item" ><button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#docket">add docket details</button></li>
+											<li class="list-group-item"><button type="button" class="btn btn-info btn-block"> save</button></li>
+								</ul>
+					</div>
+
+					<!--end of crime details selection list -->
+
+
+
+
+<!-- address  Modal -->
+<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><small>Add Address</small></h5>
+
+      </div>
+      <div class="modal-body">
+				<div class="form group">
+					<label for="address">enter address</label>
+					<input type="text" name="address" class="form-control" placeholder="enter address of where crime occured" />
+				</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary">save</button>
+      </div>
+    </div>
   </div>
+</div>
+<!--end of address modal -->
+
+
+<!-- date of crime  Modal -->
+<div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><small>provide the date on which crime occured</small></h5>
+
+      </div>
+      <div class="modal-body">
+				<div class="form group">
+					<label for="crimedate">enter date</label>
+					<input type="date" name="crimedate" class="form-control" placeholder="provide date on which crime occured" />
+				</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary">save</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--end of date modal -->
+
+<!-- attachements / evidence Modal -->
+<div class="modal fade" id="attachementsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><small>attache  evidence documents</small></h5>
+
+      </div>
+      <div class="modal-body">
+
+
+
+
+
+				<div class="custom-file m-2">
+				    <input type="file" class="custom-file-input" id="customFile">
+				    <label class="custom-file-label" for="customFile">upload picture</label>
+  			</div>
+
+				<div class="custom-file m-2">
+				    <input type="file" class="custom-file-input" id="customFile">
+				    <label class="custom-file-label" for="customFile">upload video</label>
+  			</div>
+
+				<div class="custom-file m-2">
+				    <input type="file" class="custom-file-input" id="customFile">
+				    <label class="custom-file-label" for="customFile">upload audio</label>
+  			</div>
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary">save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of attachements modal -->
+
+
+
+
+
+<!-- discription  Modal -->
+<div class="modal fade" id="discription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><small>discribe the incident</small></h5>
+
+      </div>
+      <div class="modal-body">
+				<div class="form group">
+
+					<textarea   class="form-control" rows="20" placeholder="give a brief discription of the crime" ></textarea>
+				</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary">save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of discription modal -->
+
+
+<!-- additional dockes details  Modal -->
+<div class="modal fade" id="docket" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><small>additional docket iformation</small></h5>
+
+      </div>
+      <div class="modal-body">
+										<div class="form-group">
+										  <label for="casenumber">Case Number</label>
+											<input type="text" name="casenumber" class="form-control" />
+
+										</div>
+
+										<div class="form-group">
+										  <label for="casenumber">Officer Details</label>
+											<input type="text" name="officerdetails" class="form-control" placeholder="full name" />
+
+										</div>
+
+										<div class="form-group">
+										  <label for="casenumber">Case Status</label>
+											<input type="text" name="casestatus" class="form-control" placeholder="status"/>
+
+										</div>
+
+										<div class="form-group">
+										  <label for="casenumber">Judgement</label>
+											<input type="text" name="judgement" class="form-control" placeholder="jusdgement" />
+
+										</div>
+
+
+
+											<button type="button" class="btn btn-secondary btn-block ">Save</button>
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary">save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of additional dockes details modal -->
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+  </div>
+
+
 
 	<!-- types of crime -->
 	<section id="crimetype">
@@ -99,7 +369,7 @@
 		<div class="col"><img src="src/icons/Robbery.svg" alt="Robbery"><p>Robbery</p></div>
 		<div class="col"><img src="src/icons/SmashGrab.svg" alt="SmashGrab"><p>SmashGrab</p></div>
 	</div>
-	</section>
+
 
 
 
@@ -110,6 +380,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1wMaYczjQps-ZoZqbkLmI5rMNcC_ROwQ">
 	</script>
 	<script src="bundle.js"> </script>
+
 	<script type="text/javascript">
 	//show section
 	function showCrimeTypes() {
@@ -125,6 +396,20 @@
 	}
 
 	</script>
+
+<script>
+$(document).ready(function(){
+	$(".mdc-fab").click(function(){
+
+		$(".container").css("display","block");
+		$("main").prop("disabled",true);
+
+		$("img").click(function(){
+			$(".container").addClass(" badge badge-primary")
+		})
+	})
+});
+
 
 
 </body>
